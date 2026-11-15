@@ -152,7 +152,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .nav__links a { font-size: 1rem; padding: var(--space-xs) 0; }
   .nav__links a.is-active::after { display: none; }
 }
+/* ============ КНОПКИ ============ */
+.btn { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 8px; 
+  padding: 14px 28px; 
+  border-radius: var(--radius-pill); 
+  font-size: var(--fs-small); 
+  text-transform: uppercase; 
+  letter-spacing: 0.08em; 
+  text-decoration: none; 
+  font-family: inherit; 
+  cursor: pointer; 
+  border: none;
+  transition: all var(--transition-ui); 
+}
 
+.btn--primary { 
+  background: var(--accent); 
+  color: var(--accent-contrast); 
+}
+
+.btn--primary:hover { 
+  transform: translateY(-2px); 
+  box-shadow: var(--shadow-hover); 
+}
+
+.btn--ghost { 
+  border: 1px solid var(--border); 
+  color: var(--text); 
+  background: transparent;
+}
+
+.btn--ghost:hover { 
+  border-color: var(--accent); 
+  color: var(--accent); 
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
 /* ============ HERO ============ */
 .hero { 
   min-height: 100vh; 
