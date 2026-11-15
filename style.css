@@ -3,6 +3,41 @@
   font-family: 'Bowler';
   src: url('assets/fonts/BOWLER.otf') format('opentype');
   font-display: swap;
+}@media (max-width: 960px) {
+  .nav__burger { display: block; } 
+  .nav__socials { display: none; }
+  
+  .nav__links { 
+    position: fixed; 
+    top: 72px; /* Начинается ровно под шапкой */
+    left: 0;
+    right: 0;
+    flex-direction: column; 
+    padding: var(--space-md); 
+    background: var(--bg); 
+    border-bottom: 1px solid var(--border); 
+    /* Сдвигаем вверх ровно на его высоту + на высоту шапки, чтобы спрятать полностью */
+    transform: translateY(-100%); 
+    transition: transform var(--transition-ui); 
+    gap: var(--space-xs); 
+    box-shadow: var(--shadow-soft);
+    /* Гарантированно прячем за верхний край экрана */
+    margin-top: -100vh; 
+    padding-top: 100vh; /* Компенсируем отступ, чтобы контент не улетел */
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .nav.is-open .nav__links { 
+    transform: translateY(0); 
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
+    padding-top: var(--space-md);
+  }
+  
+  .nav__links a { font-size: 1rem; padding: var(--space-xs) 0; }
+  .nav__links a.is-active::after { display: none; }
 }
 @font-face {
   font-family: 'Onest';
@@ -146,9 +181,38 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 1080px) { .nav__links { gap: var(--space-sm); } .nav__links a { font-size: 0.7rem; } }
 @media (max-width: 960px) {
-  .nav__burger { display: block; } .nav__socials { display: none; }
-  .nav__links { position: fixed; inset: 72px 0 auto 0; flex-direction: column; padding: var(--space-md); background: var(--bg); border-bottom: 1px solid var(--border); transform: translateY(-120%); transition: transform var(--transition-ui); gap: var(--space-xs); box-shadow: var(--shadow-soft); }
-  .nav.is-open .nav__links { transform: translateY(0); }
+  .nav__burger { display: block; } 
+  .nav__socials { display: none; }
+  
+  .nav__links { 
+    position: fixed; 
+    top: 72px; /* Начинается ровно под шапкой */
+    left: 0;
+    right: 0;
+    flex-direction: column; 
+    padding: var(--space-md); 
+    background: var(--bg); 
+    border-bottom: 1px solid var(--border); 
+    /* Сдвигаем вверх ровно на его высоту + на высоту шапки, чтобы спрятать полностью */
+    transform: translateY(-100%); 
+    transition: transform var(--transition-ui); 
+    gap: var(--space-xs); 
+    box-shadow: var(--shadow-soft);
+    /* Гарантированно прячем за верхний край экрана */
+    margin-top: -100vh; 
+    padding-top: 100vh; /* Компенсируем отступ, чтобы контент не улетел */
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .nav.is-open .nav__links { 
+    transform: translateY(0); 
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
+    padding-top: var(--space-md);
+  }
+  
   .nav__links a { font-size: 1rem; padding: var(--space-xs) 0; }
   .nav__links a.is-active::after { display: none; }
 }
