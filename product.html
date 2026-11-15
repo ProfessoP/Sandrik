@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="mission">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар — All Eyes On You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="product-page">
+
+  <!-- НАВИГАЦИЯ -->
+  <div id="nav-placeholder"></div>
+
+  <main class="product-fit-wrapper">
+    <div class="container breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>/</span>
+      <span id="breadcrumb-collection">Коллекция</span>
+    </div>
+
+    <div class="container product__layout">
+      
+      <!-- ГАЛЕРЕЯ -->
+      <div class="product__gallery">
+        <div class="product__main-img-wrapper" id="zoom-container">
+          <img id="main-image" class="product__main-img" src="assets/images/mission-1.jpg" alt="Главное фото">
+          <div class="zoom-lens" id="zoom-lens"></div>
+        </div>
+        <div class="product__thumbs-grid" id="thumbnails">
+          <!-- Заполняется через JS -->
+        </div>
+      </div>
+
+      <!-- ИНФО И ОБЛОЖКА -->
+      <div class="product__info-col">
+        <div class="product__info">
+          <span class="product__label" id="product-label">Коллекция 01</span>
+          <h1 class="product__title" id="product-title">Футболка «Mission to Moon»</h1>
+          <p class="product__desc" id="product-desc">Унисекс · вышивка · плотный хлопок 240 г</p>
+          <div class="product__price" id="product-price">4 900 ₽</div>
+          
+          <div class="product__contact-block">
+            <button class="btn btn--primary product__contact-btn" id="open-contact-modal">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              Связаться с нами
+            </button>
+          </div>
+
+          <div class="product__how-to">
+            <h3 class="product__how-title">Как заказать</h3>
+            <div class="product__how-steps">
+              <div class="how-step-mini">
+                <span class="how-step-mini__num">01</span>
+                <p>Нажмите «Связаться с нами»</p>
+              </div>
+              <div class="how-step-mini">
+                <span class="how-step-mini__num">02</span>
+                <p>Напишите название модели и размер</p>
+              </div>
+              <div class="how-step-mini">
+                <span class="how-step-mini__num">03</span>
+                <p>Мы подтвердим заказ и доставку</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Обложка текущей коллекции -->
+        <div class="product__cover-side">
+          <div class="collection__cover" id="product-collection-cover" data-open-modal="mission" role="button" tabindex="0">
+            <div class="collection__cover-media">
+              <img id="cover-img" src="assets/images/cover-mission.jpg" alt="Обложка коллекции" loading="lazy">
+            </div>
+            <div class="collection__cover-overlay">
+              <span class="collection__cover-label" id="cover-label">Коллекция 01</span>
+              <h3 class="collection__cover-title" id="cover-title">Mission to Moon</h3>
+              <span class="collection__cover-hint">Читать описание</span>
+            </div>
+          </div>
+          <p class="product__cover-desc-text" id="cover-text">Космическая капсула о дерзости и предельном контрасте...</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ДРУГИЕ КОЛЛЕКЦИИ -->
+    <section class="container product__other-collections">
+      <div class="product__other-grid" id="other-collections">
+        <!-- Заполняется через JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ФУТЕР -->
+  <div id="footer-placeholder"></div>
+
+  <!-- МОДАЛКА ОПИСАНИЯ -->
+  <div class="modal" id="collection-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close-modal aria-label="Закрыть">✕</button>
+      <div class="modal__media"><img id="modal-img" src="" alt=""></div>
+      <div class="modal__body">
+        <div class="modal__label" id="modal-label"></div>
+        <h3 class="modal__title" id="modal-title"></h3>
+        <p class="modal__text" id="modal-text-1"></p>
+        <p class="modal__text" id="modal-text-2"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- МОДАЛКА СВЯЗИ -->
+  <div class="modal" id="contact-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-contact></div>
+    <div class="modal__dialog contact-modal__dialog" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close-contact aria-label="Закрыть">✕</button>
+      <div class="modal__body contact-modal__body">
+        <div class="contact-modal__icon">
+          <svg viewBox="0 0 100 50" width="80" height="40">
+            <path d="M10 25 Q 50 -10 90 25 Q 50 60 10 25 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="50" cy="25" r="12" fill="currentColor" class="eye-pupil"/>
+          </svg>
+        </div>
+        <h3 class="modal__title" style="text-align: center; margin-bottom: 8px;">Мы смотрим в вашу сторону</h3>
+        <p class="modal__text" style="text-align: center; margin-bottom: var(--space-lg);">Выберите удобную соцсеть, чтобы написать нам. Ответим в течение часа!</p>
+        
+        <div class="contact-links">
+          <a href="https://t.me/alleyeson" target="_blank" class="contact-link">
+            <span class="contact-link__icon">TG</span>
+            <span>Telegram</span>
+          </a>
+          <a href="https://instagram.com/alleyeson" target="_blank" class="contact-link">
+            <span class="contact-link__icon">IG</span>
+            <span>Instagram</span>
+          </a>
+          <a href="https://vk.com/alleyeson" target="_blank" class="contact-link">
+            <span class="contact-link__icon">VK</span>
+            <span>ВКонтакте</span>
+          </a>
+          <a href="mailto:hello@alleyeson.you" class="contact-link">
+            <span class="contact-link__icon">@</span>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- КНОПКА НАВЕРХ -->
+  <button class="scroll-top" id="scroll-top" aria-label="Наверх">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="product.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
